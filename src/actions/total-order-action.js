@@ -3,7 +3,7 @@ import { TOTAL_ORDER_FETCH } from './type';
 
 export const totalOrderFetch = () => {
     return (dispatch) => {
-        axios.get(process.env.REACT_APP_API_URL + '/totalOrders').then(res => {
+        axios.get('http://localhost:3001/totalOrders').then(res => {
             dispatch({ type: TOTAL_ORDER_FETCH, data: res.data });
         })
     }
@@ -11,8 +11,8 @@ export const totalOrderFetch = () => {
 
 export const deleteTotalOrder = (id) => {
     return (dispatch) => {
-        axios.delete(process.env.REACT_APP_API_URL + '/totalOrders/' + id).then(res=>{
-            axios.get(process.env.REACT_APP_API_URL + '/totalOrders/').then(res=>{
+        axios.delete('http://localhost:3001/totalOrders/' + id).then(res=>{
+            axios.get('http://localhost:3001/totalOrders/').then(res=>{
                 dispatch ({type:TOTAL_ORDER_FETCH,data: res.data});
             })
         })

@@ -3,7 +3,7 @@ import {MENU_FETCH} from './type';
 
 export const menuFetch = ()=>{
     return (dispatch)=>{
-        axios.get(process.env.REACT_APP_API_URL + '/menu').then(res=>{
+        axios.get('http://localhost:3001/menu').then(res=>{
             dispatch({type:MENU_FETCH, data: res.data});
         })
     }

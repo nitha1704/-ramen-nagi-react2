@@ -88,7 +88,7 @@ class Menu extends React.Component {
         const { orders, totalPrice } = this.state;
 
         if (orders.length > 0) {
-            axios.post(process.env.REACT_APP_API_URL + '/totalOrders', { orderedDate: new Date().toLocaleString(), totalPrice, orders })
+            axios.post('http://localhost:3001/totalOrders', { orderedDate: new Date().toLocaleString(), totalPrice, orders })
                 .then(res => {
                     this.setState({
                         orders: [], totalPrice: 0, confirmClassName: "confirm-order bg-success",

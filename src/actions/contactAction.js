@@ -3,7 +3,7 @@ import {CONTACT_SUBMIT, CONTACT_INITIAL} from './type';
 
 export const contactSubmit = (contactFormValues) => {
 	return dispatch => {
-		axios.post(process.env.REACT_APP_API_URL + '/comment', contactFormValues).then(res=>{
+		axios.post('http://localhost:3001/comment', contactFormValues).then(res=>{
 			dispatch({type: CONTACT_SUBMIT});
 		})
 	}
